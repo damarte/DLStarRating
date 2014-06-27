@@ -27,7 +27,8 @@
             highlightedStar = [self croppedImage:highlightedStar];
             star = [self croppedImage:star];
         }
-        self.frame = CGRectMake((star.size.width*index), 0, star.size.width, star.size.height+kEdgeInsetBottom);
+        //self.frame = CGRectMake((star.size.width*index), 0, star.size.width, star.size.height+kEdgeInsetBottom);
+        self.frame = CGRectMake((star.size.width*index)/[[UIScreen mainScreen] scale], 0, star.size.width/[[UIScreen mainScreen] scale], (star.size.height/[[UIScreen mainScreen] scale])+kEdgeInsetBottom);
         [self setStarImage:star highlightedStarImage:highlightedStar];
 		[self setImageEdgeInsets:UIEdgeInsetsMake(0, 0, kEdgeInsetBottom, 0)];
 		[self setBackgroundColor:[UIColor clearColor]];
